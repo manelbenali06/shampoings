@@ -3,7 +3,7 @@
 {% block title %}Mon panier - HairCare{% endblock %}
 
 {% block body %}
-<br>
+
     <h1>Mon panier</h1>
     Retrouvez l'ensemble des produits que vous avez ajouté à votre panier.
 
@@ -55,7 +55,7 @@
         <div class="text-right mb-5">
             <b>Nombre de produit :</b> {{ cart|length }}<br/>
             <b>Total de mon panier :</b> {{ (total / 100)|number_format(2, ',', '.') }} €
-            <a href="{{ path('commande') }}" class="btn btn-success btn-block mt-3">Valider mon panier</a>
+            <a href="{{ path('commande') }}" class="btn btn-primary btn-block mt-3">Valider mon panier</a>
         </div>
     {% else %}
         <hr>
