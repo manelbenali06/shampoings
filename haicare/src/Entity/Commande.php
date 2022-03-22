@@ -37,8 +37,7 @@ class Commande
     #[ORM\Column(type: 'datetime')]
     private $createdAt;
 
-    #[ORM\Column(type: 'boolean')]
-    private $isPaid;
+   
 
 
     #[ORM\ManyToOne(targetEntity: User::class, inversedBy: 'mycommand')]
@@ -47,6 +46,9 @@ class Commande
 
     #[ORM\OneToMany(mappedBy: 'myCommande', targetEntity: CommandeDetails::class)]
     private $commandeDetails;
+
+    #[ORM\Column(type: 'integer')]
+    private $state;
 
 
     
@@ -60,9 +62,7 @@ class Commande
         return $this->id;
     }
 
-    
-
-    public function getReference(): ?string
+        public function getReference(): ?string
     {
         return $this->reference;
     }
@@ -133,19 +133,6 @@ class Commande
 
         return $this;
     }
-
-    public function getIsPaid(): ?bool
-    {
-        return $this->isPaid;
-    }
-
-    public function setIsPaid(bool $isPaid): self
-    {
-        $this->isPaid = $isPaid;
-
-        return $this;
-    }
-
     public function addCommandeDetail(CommandeDetails $commandeDetail): self
     {
         if (!$this->commandeDetails->contains($commandeDetail)) {
@@ -198,6 +185,18 @@ class Commande
 
         return $total;
     }
- 
+
+    public function getState(): ?int
+    {
+        return $this->state;
+    }
+
+    public function setState(int $state): self
+    {
+        $this->state = $state;
+
+        return $this;
+    }
+    
 
 }

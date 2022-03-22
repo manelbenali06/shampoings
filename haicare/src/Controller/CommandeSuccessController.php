@@ -28,10 +28,10 @@ class CommandeSuccessController extends AbstractController
             return $this->redirectToRoute('home');
         }
 
-        if (!$commande->getIsPaid()) {
+        if ($commande->getState() == 1) {
             
             $cart->remove();
-            $commande->setIsPaid(1);
+            $commande->setState(1);
             $this->entityManager->flush();
         }
              //Envoyer un email à notre client pour lui confirmer sa commande

@@ -7,6 +7,7 @@
 <div class="pt-5">
     <h1>Mon compte</h1>
     {% if is_granted('ROLE_ADMIN') %}
+    <!--Un lien vers l'administration et je vouderais l'afficher uniquement si l'utilisateur est un administrateuret pr sa j'utilise la fonction is granted-->
         <small><a href="/admin">Vous êtes un administrateur, accéder au backoffice ?</a></small><br/>
     {% endif %}
     <br>

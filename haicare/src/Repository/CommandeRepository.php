@@ -26,7 +26,7 @@ class CommandeRepository extends ServiceEntityRepository
    public function findSuccessCommandes($user)
 {
     return $this->createQueryBuilder('c')//alias de Commande
-           ->andWhere('c.isPaid = 1')//condition aller chercher dans Commande isPaid quand il est egal a 1
+           ->andWhere('c.state > 0')//condition aller chercher dans Commande state quand il est > 0
            ->andWhere('c.user = :user')
            ->setParameter('user', $user)
            ->orderBy('c.id', 'DESC')
