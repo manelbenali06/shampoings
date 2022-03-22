@@ -85,7 +85,7 @@ class CommandeController extends AbstractController
             $commande->setCarrierName($carriers->getName());
             $commande->setCarrierPrice($carriers->getPrice());
             $commande->setDelivery($delivery_content);
-            $commande->setIsPaid(0);
+            $commande->setIsPaid(1);
 
             $this->entityManager->persist($commande);
 
