@@ -3,12 +3,13 @@
 {% block body %}
 
    
-<div class="row pb-5">
+<div class="row pb-5 pt-5">
     {% for ingredient in ingredients %}
         <div class="col-md-4">
             <div class="product-item text-center">
                 <img src="{{ asset('uploads/images/ingredient/' ~ ingredient.image) }}" class="card-img-top w-75" alt="photo principale de {{ ingredient.name }}">
-                <h5 class="card-title">{{ ingredient.name }}</h5>
+                <h5 class="card-title pt-2">{{ ingredient.name }}</h5>
+                <br>
                 <a href="{{ path('ingredient_show', {'id': ingredient.id}) }}" class="btn btn-primary btn-sm text-white">Bienfait</a>
             </div>
         </div>
