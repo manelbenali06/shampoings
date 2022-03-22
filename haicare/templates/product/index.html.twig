@@ -6,7 +6,7 @@
 
     <div class="row pb-5 pt-5">
         {% for product in products %}
-            <div class="col-md-4">
+            <div class="col-md-4 pt-3">
                 <div class="product-item text-center">
                     <img src="{{ asset('uploads/images/product/' ~ product.image) }}" class="card-img-top w-75" alt="{{ product.name }}">
                     <h5 class="card-title pt-2">{{ product.name }}</h5>

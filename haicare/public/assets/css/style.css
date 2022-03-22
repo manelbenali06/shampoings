@@ -1,7 +1,6 @@
 body {
   position: relative;
-  font-family: 'Crimson Pro', serif;
-  font-size: 30px;
+  
 }
 .navbar-item-custom, .navbar-item-custom a {
   color : white;
@@ -18,53 +17,24 @@ main {
   padding-top: -200px;
   padding: 0cm;
 
+  
+}
+/***********************heading(photo ronde)****************************************************************/
+.col-lg-4 {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+.h3 {
+  font-weight: 400;
+}
+.col-lg-4 p {
+  margin-right: .75rem;
+  margin-left: .75rem;
 }
 
-
-
-
-.product-container {
-margin-bottom: 250px;  
-}
-.product-page-price {
-  font-size: 18px;
-}
-
-.cart-icon {
-  height: 20px;
-  padding-left: 20px;
-}
-.bolch-small {
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-
-.commande-summary {
-  background-color: #f4f8ff;
-  padding: 20px;
-  margin-top: 22px;
-}
-
-
-ount-item {
-  background-color: #f1f2f6;
-  padding: 70px;
-}
-
-.account-item a {
-
-  font-size: 13px;
-  color: #4b6584;
-  font-weight: bold;
-}
-.account-item a:hover {
-  color: #778ca3;
-  text-decoration: none;
-}
 
 .h3 {
-  font-weight: 200px;
+  
   font-family: 'Crimson Pro', serif;
   text-align: center;
 }
