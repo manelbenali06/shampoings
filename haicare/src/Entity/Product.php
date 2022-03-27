@@ -183,7 +183,10 @@ class Product
     public function __toString()
     {
         return $this-> getName();
+      
     }
+    
+   
 
     /**
      * @return Collection|Ingredient[]
@@ -192,7 +195,8 @@ class Product
     {
         return $this->ingredients;
     }
-
+   
+  
     public function addIngredient(Ingredient $ingredient): self
     {
         if (!$this->ingredients->contains($ingredient)) {

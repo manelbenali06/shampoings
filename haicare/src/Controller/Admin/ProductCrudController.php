@@ -20,24 +20,30 @@ class ProductCrudController extends AbstractCrudController
         return Product::class;
     }
 
-    
+    //Grace a la fonction ConfiureField j'indique a easy admin qu'elles sont les inputs que je veux afficher 
+    //et en quel format.
     public function configureFields(string $pageName): iterable
     {
         return [
-            
+            //je veux afficher un textField qui est bien dans easy admin bundle une nouvelle propriete nom
             TextField::new('name'),
             TextareaField::new('composants'),
+            //définir la money dans laquelle on travail
             MoneyField::new('price')->setCurrency('EUR'),
-            SlugField::new('slug')->setTargetFieldName('name'),
+            //permet d'avoir des URL plus jolie
+            SlugField::new('slug')->setTargetFieldName('name'),//se baser sur le nom de mon produit pour générer un slug
             AssociationField::new('category'),
             AssociationField::new('ingredients'),
             
-            //Field::new('imageFile')
-            //->setFormType(VichImageType::class),
+            //Je veux afficher un upload qui permet de charger une image 
             ImageField::new('image')
+            //une methode qui permet d'indiquer le dossier ou mettre nos images
             ->setBasePath('uploads/images/product')
+            //mettre le chemin complet afin de  définir le répertoire où les images sont téléchargées.
             ->setUploadDir('public/uploads/images/product')
+            //la maniere d'on veut encoder nos fichiers images
             ->setUploadedFileNamePattern('[randomhash].[extension]')
+            
             ->setRequired(false),
         ];
     }

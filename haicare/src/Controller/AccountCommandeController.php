@@ -10,12 +10,10 @@ use Symfony\Component\Routing\Annotation\Route;
 class AccountCommandeController extends AbstractController
 {
     private $entityManager;
-
     public function __construct(EntityManagerInterface $entityManager)
     {
         $this->entityManager = $entityManager;
     }
-
     /**
      * @Route("/compte/mes-commandes", name="account_commande")
      */
@@ -27,7 +25,6 @@ class AccountCommandeController extends AbstractController
             'commandes' => $commandes
         ]);
     }
-
     /**
      * @Route("/compte/mes-commandes/{reference}", name="account_commande_show")
      */

@@ -54,7 +54,8 @@ class CommandeCrudController extends AbstractCrudController
         $commande = $context->getEntity()->getInstance();//chercher getEntity grace a context pour avoir la commande que je souhaite modifier
         $commande->setState(2);
         $this->entityManager->flush();
-        $this->addFlash('notice', "<span style='color:green;'><strong>La commande ".$commande>getReference()." est bien <u>en cours de préparation</u>.</strong></span>");
+        
+        $this->addFlash('notice', "<span style='color:green;'><strong>La commande ".$commande->getReference()." est bien <u>en cours de préparation</u>.</strong></span>");
 
         $url = $this->crudUrlGenerator->build()// appeler la methode build pour rediriger l'utilisateur vers la vue détails ou commandes
             ->setController(CommandeCrudController::class)// lui faire passer un setcontroller

@@ -1,13 +1,11 @@
 <?php
 
 namespace App\Controller;
-
 use App\Classe\Cart;
 use App\Entity\Commande;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-
 class CommandeSuccessController extends AbstractController
 {
     private $entityManager;
@@ -16,7 +14,6 @@ class CommandeSuccessController extends AbstractController
     {
         $this->entityManager = $entityManager;
     }
-
     /**
      * @Route("/commande/merci/{stripeSessionId}", name="commande_success")
      */
@@ -44,5 +41,4 @@ class CommandeSuccessController extends AbstractController
             'commande' => $commande
         ]);
     }
-
 }

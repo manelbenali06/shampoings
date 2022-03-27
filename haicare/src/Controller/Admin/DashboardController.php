@@ -3,15 +3,12 @@
 namespace App\Controller\Admin;
 
 use App\Entity\User;
-
 use App\Entity\Carrier;
 use App\Entity\Product;
 use App\Entity\Category;
 use App\Entity\Commande;
 use App\Entity\Ingredient;
-
 use Symfony\Component\HttpFoundation\Response;
-
 use Symfony\Component\Routing\Annotation\Route;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
@@ -21,8 +18,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
 
 class DashboardController extends AbstractDashboardController
 {
-
-    
+    //une route qui est affecté a admin
     /**
      * @Route("/admin", name="admin")
      */
@@ -41,8 +37,9 @@ class DashboardController extends AbstractDashboardController
             ->setTitle('HairCare');
     }
 
-    public function configureMenuItems(): iterable
+    public function configureMenuItems(): iterable// pour configurer le menu 
     {
+        //on créant le crud controller on permet a easy admin de se brancher avec les differntes routes
         yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home');
         yield MenuItem::linkToCrud('Users', 'fa fa-user', User::class);
         yield MenuItem::linkToCrud('Categories', 'fa fa-list', Category::class);

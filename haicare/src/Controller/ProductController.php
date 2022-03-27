@@ -14,7 +14,11 @@ class ProductController extends AbstractController
     #[Route('/', name: 'product_index', methods: ['GET'])]
     public function index(ProductRepository $productRepository): Response
     {
+        //je passe une variable dans mon tableau qui s'appelle products qui me permet d'afficher 
+            //tous mes produits coté twig
         return $this->render('product/index.html.twig', [
+        
+        //reccuprer mes produit grace a une requete sql find All  et je fais a l'aide de l'ORM (doctrine)
             'products' => $productRepository->findAll(),
         ]);
     }
